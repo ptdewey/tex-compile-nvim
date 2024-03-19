@@ -6,20 +6,30 @@ Lightweight Neovim plugin allowing easy compilation of latex files from within N
 * latexmk
 
 ### Setup
-Use your favorite package manager (I use lazy)
 
+Lazy:
 ```lua
 {
-    -- install package from GitHub
     "ptdewey/tex-compile-nvim",
-
-    -- ensure plenary is installed
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
+    config = function()
+        require("tex-compile-nvim").setup()
+    end,
+}
+```
 
-    -- run plugin setup
-    require("tex-compile-nvim").setup()
+Packer:
+```lua
+use {
+    "ptdewey/tex-compile-nvim",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+    },
+    config = function()
+        require("tex-compile-nvim").setup()
+    end,
 }
 ```
 
